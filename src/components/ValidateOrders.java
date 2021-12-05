@@ -16,7 +16,7 @@ public class ValidateOrders {
 
     public static double TotalAmountPaid = 0;
 
-    public static ArrayList<Order> InValidOrders;
+    public static ArrayList<Order> InValidOrders = new ArrayList<Order>();
     
 
     public static void validate(HashMap<String, Item> Stock, HashMap<String, Order> Orders){
@@ -66,6 +66,19 @@ public class ValidateOrders {
             else{
                 InValidOrders.add(order);
             }
+        }
+        System.out.println("InValidOrders.size()"+InValidOrders.size());
+        try {
+            if(InValidOrders.size()==0){
+                ValidOrderOutputGenerator.Generate(TotalAmountPaid);
+            }
+            else{
+                InvalidOrderOutputGenerator.Generate(InValidOrders);
+            }
+            
+        } catch (Exception e) {
+            //TODO: handle exception
+            System.out.println(e);
         }
     }
 }

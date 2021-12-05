@@ -34,4 +34,20 @@ public class Item {
 		return quantityStock;
 	}
 
+	public void setCategory(String category) {
+		this.category = category;
+	}
+
+    public void setName(String name) {
+		this.name = name;
+	}
+
+    public void setPrice(double price) {
+		this.price = price;
+	}
+
+    public void setQuantityStock(int quantityStock) {
+		this.quantityStock = quantityStock;
+	}
+
 }
