@@ -73,7 +73,7 @@ public class ValidateOrders {
                 ValidOrderOutputGenerator.Generate(TotalAmountPaid);
             }
             else{
-                InvalidOrderOutputGenerator.Generate(InValidOrders);
+                InvalidOrderOutputGenerator.Generate(InValidOrders, Stock);
             }
             
         } catch (Exception e) {
