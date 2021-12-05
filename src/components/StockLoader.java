@@ -32,7 +32,6 @@ public class StockLoader {
 		} catch (Exception e) {
 			
             System.out.println(e);
-			// System.out.println( "The stock file was not found, Please check the file path." );
 			System.exit(0);
 			
 		}

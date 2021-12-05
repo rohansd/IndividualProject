@@ -29,7 +29,6 @@ public class CardController {
             }
 		} catch (Exception e) {
             System.out.println(e);
-			// System.out.println( "The stock file was not found, Please check the file path." );
 			System.exit(0);
 		}
 
@@ -45,18 +44,11 @@ public class CardController {
     public static void addCard(HashSet<String> ListOfCardsNeedToBeAdded, HashSet<String> cards){
         try{
             FileWriter pw = new FileWriter("/Users/rohandeshmukh/Desktop/Cards - Sheet1.csv",true);
-            // FileWriter errorFile = new FileWriter("/Users/rohandeshmukh/Desktop/Cards - Sheet1.csv");
-            ///Users/rohandeshmukh/Desktop
-            // errorFile.write("CardNumber : \n");
             for(String line : ListOfCardsNeedToBeAdded){
                 pw.append("\n "+line+" ");
             }
-            // for(String line : cards){
-                // errorFile.write(" "+line+"\n");
-            // }
             pw.flush();
             pw.close();
-            System.out.println("Order output file has been generated at the given path !");
         }catch (IOException e){
             e.printStackTrace();
         }

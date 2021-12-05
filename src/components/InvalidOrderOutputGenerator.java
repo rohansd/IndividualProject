@@ -13,7 +13,6 @@ public class InvalidOrderOutputGenerator {
                 errorFile.write("Item : "+order.getItem()+" \t "+" Input Quantity : "+order.getQuantity()+" \t"+"Inventory Quantity : "+Stock.get(order.getItem()).getQuantityStock()+"\n");
             }
             errorFile.close();
-            System.out.println("Please correct quantites for below items !");
         } catch (Exception e) {
             e.printStackTrace();
         }
