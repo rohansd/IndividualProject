@@ -16,13 +16,10 @@ public class ValidateOrders {
 
     public static double TotalAmountPaid = 0;
 
-    HashMap<String, Item> ValidOrders = new HashMap<String, Item>();
-    HashMap<String, Item> InvalidOrders = new HashMap<String, Item>();
+    public static ArrayList<Order> InValidOrders;
     
 
-    public static double validate(HashMap<String, Item> Stock, HashMap<String, Order> Orders){
-
-        
+    public static void validate(HashMap<String, Item> Stock, HashMap<String, Order> Orders){
         int EssentialsItemsQuantity = 0, LuxuryItemsQuantity = 0, MiscItemsQuantity = 0;
         for (String name: Orders.keySet()) {
             Order order = Orders.get(name);//value.getItem()
@@ -62,9 +59,13 @@ public class ValidateOrders {
                 else if(stock.getCategory().equals("Misc") && checkMiscCount){
                     TotalAmountPaid += (order.getQuantity()*stock.getPrice());
                 }
+                else{
+                    InValidOrders.add(order);
+                }
+            }
+            else{
+                InValidOrders.add(order);
             }
         }
-        return TotalAmountPaid;
-
     }
 }
